@@ -60,7 +60,7 @@ objects:
             command:
               - "/bin/bash"
               - "-c"
-              - "NEXUS_PASSWORD=$(cat /nexus-data/admin.password);curl -o /tmp/nexus-functions -s https://raw.githubusercontent.com/OpenShiftDemos/nexus/master/scripts/nexus-functions;source /tmp/nexus-functions;add_nexus3_redhat_repos admin $NEXUS_PASSWORD http://${NAME}:8081"
+              - "NEXUS_PASSWORD=$(cat /nexus-data/admin.password);curl -o /tmp/nexus-functions -s https://raw.githubusercontent.com/rhappdev/templates/master/CICD/nexus/nexus-functions;source /tmp/nexus-functions;add_nexus3_redhat_repos admin $NEXUS_PASSWORD http://${NAME}:8081"
             volumes:
             - nexus
       type: Recreate
